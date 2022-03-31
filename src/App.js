@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Home from './pages/Home';
+import { Routes, Route } from 'react-router-dom';
+import { extendTheme, ChakraProvider, CSSReset } from '@chakra-ui/react'
 
 function App() {
+  const customTheme = extendTheme({
+    semanticTokens: {
+      colors: {
+        error: 'red.500',
+        success: 'green.500',
+        primary: {
+          default: 'red.500',
+          _dark: 'red.400',
+        },
+        fonts: {
+          heading: '"Roboto", sans-serif',
+          body: '"Roboto", sans-serif',
+        },
+        secondary: {
+          default: 'red.800',
+          _dark: 'red.700',
+        },
+      },
+    },
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={customTheme}>
+    <CSSReset />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      </ChakraProvider>
   );
 }
 
