@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import HighlightsItem from "./HighlightsItem"
+import HighlightsItem from "./HighlightsItem";
+import Video from './Video';
 
-export class HighlightsList extends Component {
-  render() {
-    const { highlights } = this.props;
-    console.log(highlights)
+function HighlightsList(props) {
+  let { highlights } = props
+    console.log(props.highlights)
     return (
       <div>
           {highlights.map((highlight, index) => {
@@ -12,13 +12,14 @@ export class HighlightsList extends Component {
               title={highlight.title}
               competition={highlight.competition}
               thumbnail={highlight.thumbnail}
-              date={highlight.date}
+              date={highlight.date.slice(0,10)}
+              videos={highlight.videos}
+              matchviewUrl={highlight.matchviewUrl}
               key={index}
               />
           })}
       </div>
     )
   }
-}
 
 export default HighlightsList

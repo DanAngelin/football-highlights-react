@@ -2,6 +2,8 @@
 import './App.css';
 import Home from './pages/Home';
 import { Routes, Route } from 'react-router-dom';
+import HighlightsItem from './components/HighlightsItem';
+import Video from './components/Video';
 import { extendTheme, ChakraProvider, CSSReset } from '@chakra-ui/react'
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
     <CSSReset />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/video/:key" element={<Video />} />
       </Routes>
       </ChakraProvider>
   );
