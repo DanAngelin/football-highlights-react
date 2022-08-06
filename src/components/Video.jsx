@@ -1,20 +1,23 @@
-import React, { Component } from 'react';
+import { Box } from '@chakra-ui/react';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import Layout from './Layout/Layout';
 
-export class Video extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            video: []
-        }
-    }
+function Video() {
 
-  render() {
-    const { video } = this.props;
-      console.log(video);
-    return (
-      <div>Video</div>
-    )
-  }
+  let data = useLocation();
+
+  const video = data.state
+
+  return (
+    <Layout>
+      {
+        video.map((video, index) => {
+          return <Box key={index} dangerouslySetInnerHTML={{ __html: video.embed }}></Box>
+        })
+      }
+    </Layout>
+  )
 }
 
 export default Video
