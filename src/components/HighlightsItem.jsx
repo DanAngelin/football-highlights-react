@@ -6,6 +6,7 @@ import { Image, Box, Text, chakra } from '@chakra-ui/react';
 const HighlightsItem = function(props) {
 
     const {title, competition, thumbnail, date, videos, } = props;
+    console.log(thumbnail)
     const WhiteCard = chakra(Box, {
         baseStyle: {
             bg: "white",
@@ -19,10 +20,10 @@ const HighlightsItem = function(props) {
     return(
             <WhiteCard>
                 <Link to={`/video/${videos[0].id}`} state={videos} >
-                    <Text fontSize='xl'> { title } </Text>
+                    <Image mb="3" src={thumbnail} alt='Match Highlight' />
+                    <Text fontSize="xl">⚽ { title } </Text>
                     <p> { competition }</p>
                     <p> { date } </p>
-                    <Image src={thumbnail} alt='Match Highlight' />
                 </Link>
             </WhiteCard>
     );

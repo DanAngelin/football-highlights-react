@@ -17,10 +17,10 @@ function HighlightsList() {
   });
   }, [])
 
-const highlightTen = highlights.slice(0, 10)
+const highlightTen = highlights.slice(7, 16)
 
     return (
-      <Grid templateColumns="repeat(auto-fit, minmax(20rem, 1fr))" gap={5}>
+      <Grid templateColumns="repeat(auto-fit, minmax(20rem, 1fr))" gap="5">
           {highlightTen.map((highlight, index) => {
               return <HighlightsItem
               title={highlight.title}
