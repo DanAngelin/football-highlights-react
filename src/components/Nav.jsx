@@ -1,5 +1,5 @@
-import { Box, Button } from '@chakra-ui/react';
-import React, { useState } from 'react'
+import { Box, Button, useMediaQuery } from '@chakra-ui/react';
+import React from 'react'
 import Logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { Link as HrefLink } from '@chakra-ui/react'
@@ -39,7 +39,7 @@ function Nav() {
   }
 
   return (
-    <Box m={12} display="flex" alignItems="center" justifyContent="space-between">
+    <Box m={12} display="flex" alignItems="center" justifyContent="space-between"  flexDirection={{sm: "column", md: "row"}} gap={{sm: "5"}}>
       <Link to="/">
         <img src={Logo} alt="logo" />
       </Link>
@@ -47,14 +47,14 @@ function Nav() {
 
       <Flex>
             <Link to="/">
-              <Button colorScheme='teal' size='md' ml="10">
+              <Button colorScheme='teal' size='md' ml={{sm: "0", md: "10"}}>
                 <Icon as={AiOutlineHome} w={5} h={5} mr={2} />
                 Home
               </Button>
             </Link>
 
-            <Box>
-              <Button colorScheme='teal' size='md' ml="10" onClick={() => handleModal("md")}
+            <Box justifyContent={{sm: "center"}}>
+              <Button colorScheme='teal' size='md' ml={{sm: "1", md: "10"}} onClick={() => handleModal("md")}
                 key={"md"}>
                 <Icon as={MdOutlineContactSupport} w={5} h={5} mr={2}/>
                 Contact

@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import { RiArrowGoBackFill } from 'react-icons/ri'
 import { Button, Icon } from '@chakra-ui/react';
-import { ArrowLeftIcon } from '@chakra-ui/icons'
 
 function Video() {
 

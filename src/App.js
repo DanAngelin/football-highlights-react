@@ -1,11 +1,10 @@
 
 import './App.css';
 import Home from './pages/Home';
+import * as React from 'react'
 import { Routes, Route } from 'react-router-dom';
-import HighlightsItem from './components/HighlightsItem';
 import Video from './components/Video';
 import { extendTheme, ChakraProvider, CSSReset } from '@chakra-ui/react'
-import { mode } from "@chakra-ui/theme-tools";
 
 function App() {
   const customTheme = extendTheme({
@@ -27,6 +26,11 @@ function App() {
       '2xl': '1rem',
       '3xl': '1.5rem',
       full: '9999px',
+    },
+
+    breakpoints: {
+      sm: "250px",
+      md: "768px",
     },
 
     semanticTokens: {
