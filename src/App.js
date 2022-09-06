@@ -5,6 +5,7 @@ import * as React from 'react'
 import { Routes, Route } from 'react-router-dom';
 import Video from './components/Video';
 import { extendTheme, ChakraProvider, CSSReset } from '@chakra-ui/react'
+import HighlightsList from './components/HighlightsList';
 
 function App() {
   const customTheme = extendTheme({
@@ -56,6 +57,7 @@ function App() {
       <Routes >
         <Route path="/" element={<Home />} />
         <Route path="/video/:key" element={<Video />}/>
+        <Route path="/page/:key" element={<HighlightsList />}/>
       </Routes>
     </ChakraProvider>
   );

@@ -10,11 +10,11 @@ function HighlightsList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [highlightsPerPage] = useState(8);
 
-
+console.log(highlights)
   useEffect(() => {
     const fetchHighlights = async() => {
       setLoading(true);
-      const res = await axios.get("https://www.scorebat.com/video-api/v3/feed/?token=**************************************************");
+      const res = await axios.get("https://www.scorebat.com/video-api/v3/feed/?token=MTgxNzdfMTY1MzY4MzkzNV9kYjYzMWU5N2RiYTZmMzFmOWE4NzQ5ZWVhNDAxMTk5MDkxZjczYmUz");
       setHighlights(res.data.response);
       setLoading(false);
     }
@@ -30,8 +30,8 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
     return (
             <Box>
-              <HighlightsItem highlights={currentHighlights} loading={loading} />
-              <Pagination highlightsPerPage={highlightsPerPage} totalHighlights={highlights.length} paginate={paginate}/>
+                <HighlightsItem highlights={currentHighlights} loading={loading} />
+                <Pagination currentPage={currentPage} highlightsPerPage={highlightsPerPage} totalHighlights={highlights.length} paginate={paginate}/>
             </Box>
     )
   }
