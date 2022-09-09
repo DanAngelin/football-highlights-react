@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Image, Box, Text, Grid, chakra } from '@chakra-ui/react';
+import DefaultThumbnail from "../assets/default-thumbnail.jpg";
 
 
 const HighlightsItem = function({highlights, loading}) {
@@ -23,7 +24,13 @@ const HighlightsItem = function({highlights, loading}) {
             highlights.map((highlight, index) => {
                 return <WhiteCard key={index}>
                 <Link to={`/video/${highlight.videos[0].id}`} state={highlight.videos} >
-                    <Image mb="3" src={highlight.thumbnail} alt='Match Highlight' />
+                    <Image mb="3"   src={highlight.thumbnail} 
+                                    onError={(e) => {
+                                                                e.target.onerror = null;
+                                                                e.target.src = DefaultThumbnail;
+                                                                }} 
+                                    alt='Match Highlight' 
+                    />
                     <Text fontSize="md" fontWeight="bold">⚽ { highlight.title } </Text>
                     <p> { highlight.competition }</p>
                     <p> { highlight.date.slice(0, 10) } </p>

@@ -21,7 +21,7 @@ function HighlightsList() {
 
     fetchHighlights();
   }, []);
-console.log(currentPage)
+
 const indexOfLastHighlight = currentPage * highlightsPerPage;
 const indexOfFirstHighlight = indexOfLastHighlight - highlightsPerPage;
 const currentHighlights = highlights.slice(indexOfFirstHighlight, indexOfLastHighlight);
