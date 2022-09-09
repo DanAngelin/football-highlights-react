@@ -57,7 +57,6 @@ function App() {
       <Routes >
         <Route path="/" element={<Home />} />
         <Route path="/video/:key" element={<Video />}/>
-        <Route path="/page/:key" element={<HighlightsList />}/>
       </Routes>
     </ChakraProvider>
   );

@@ -6,11 +6,11 @@ import axios from 'axios';
 
 function HighlightsList() {
   const [highlights, setHighlights] = useState([]);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [highlightsPerPage] = useState(8);
 
-console.log(highlights)
+
   useEffect(() => {
     const fetchHighlights = async() => {
       setLoading(true);
@@ -21,12 +21,12 @@ console.log(highlights)
 
     fetchHighlights();
   }, []);
-
+console.log(currentPage)
 const indexOfLastHighlight = currentPage * highlightsPerPage;
 const indexOfFirstHighlight = indexOfLastHighlight - highlightsPerPage;
-const currentHighlights = highlights.slice(indexOfFirstHighlight, indexOfLastHighlight)
+const currentHighlights = highlights.slice(indexOfFirstHighlight, indexOfLastHighlight);
 
-const paginate = (pageNumber) => setCurrentPage(pageNumber)
+const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
             <Box>

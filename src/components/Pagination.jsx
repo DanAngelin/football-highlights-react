@@ -11,11 +11,12 @@ const Pagination = ({highlightsPerPage, totalHighlights, paginate, currentPage})
   return (
     <Flex justifyContent="center" mt="5" gap="4" color="white" flexWrap="wrap">
         {pageNumbers.map((number, index) => {
-            return <Link onClick={() => paginate(number)} key={index} >
+            return <Link onClick={() => 
+            paginate(number)} key={index}>
               {number === currentPage ? <Button colorScheme='blue'>
                         {number}
                       </Button> 
-                      : 
+                      :
                       <Button colorScheme='green' variant='outline'>
                         {number}
                       </Button>}

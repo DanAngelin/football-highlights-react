@@ -10,10 +10,8 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
-  <StrictMode>
     <Router>
       <App />
-    </Router>
-  </StrictMode>,
+    </Router>,
 );
 
