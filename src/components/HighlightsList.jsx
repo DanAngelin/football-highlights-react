@@ -14,7 +14,7 @@ function HighlightsList() {
   useEffect(() => {
     const fetchHighlights = async() => {
       setLoading(true);
-      const res = await axios.get("https://www.scorebat.com/video-api/v3/feed/?token=MTgxNzdfMTY1MzY4MzkzNV9kYjYzMWU5N2RiYTZmMzFmOWE4NzQ5ZWVhNDAxMTk5MDkxZjczYmUz");
+      const res = await axios.get("https://www.scorebat.com/video-api/v3/feed/?token={API_KEY}");
       setHighlights(res.data.response);
       setLoading(false);
     }
