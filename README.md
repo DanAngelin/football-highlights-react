@@ -6,4 +6,5 @@
 
 Click for View => [Live](https://soccer.angelindev.xyz/)
 
-![soccerhighlights](https://i.imgur.com/tiQb25Z.jpg) 
+![soccerhighlights](https://i.imgur.com/LRDamk8.jpg)
+![worldcupgroups](https://i.imgur.com/mOq1NbF.jpg) 

@@ -24,7 +24,7 @@ const groups = {
         "teams": [
             {
                 name: "England",
-                flag: "https://en.wikipedia.org/wiki/Flag_of_England#/media/File:Flag_of_England.svg"
+                flag: "https://www.countryflags.com/wp-content/uploads/england-flag-jpg-xl.jpg"
             },
             {
                 name: "IR Iran",
@@ -36,7 +36,7 @@ const groups = {
             },
             {
                 name: "Wales",
-                flag: "https://en.wikipedia.org/wiki/Flag_of_Wales#/media/File:Flag_of_Wales.svg"
+                flag: "https://www.countryflags.com/wp-content/uploads/wales-flag-jpg-xl.jpg"
             }
         ]
     },
