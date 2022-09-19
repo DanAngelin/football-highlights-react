@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import HighlightsItem from "./HighlightsItem";
 import Pagination from './Pagination';
 import { Box } from '@chakra-ui/react';
-import axios from 'axios';
+import useAPISoccer from './hooks/useAPISoccer';
 
 function HighlightsList() {
-  const [highlights, setHighlights] = useState([]);
-  const [loading, setLoading] = useState(false);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [highlightsPerPage] = useState(8);
 
-
-  useEffect(() => {
-    const fetchHighlights = async() => {
-      setLoading(true);
-      const res = await axios.get("https://www.scorebat.com/video-api/v3/feed/?token={API_KEY}");
-      setHighlights(res.data.response);
-      setLoading(false);
-    }
-
-    fetchHighlights();
-  }, []);
+  const { highlights, loading } = useAPISoccer();
 
 const indexOfLastHighlight = currentPage * highlightsPerPage;
 const indexOfFirstHighlight = indexOfLastHighlight - highlightsPerPage;
