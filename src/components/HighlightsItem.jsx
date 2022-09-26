@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Image, Box, Text, Grid, chakra } from '@chakra-ui/react';
+import { Image, Box, Text, Grid, Flex, chakra } from '@chakra-ui/react';
 import DefaultThumbnail from "../assets/default-thumbnail.jpg";
 
 
@@ -13,9 +13,10 @@ const HighlightsItem = function({highlights, loading}) {
         baseStyle: {
             bg: "white",
             borderRadius: "6px",
-            padding: "24px",
+            padding: "10px",
             display: "flex",
-            textAlign: "center"
+            textAlign: "center",
+            boxShadow: "xl"
         }
     })
 
@@ -24,16 +25,18 @@ const HighlightsItem = function({highlights, loading}) {
             highlights.map((highlight, index) => {
                 return <WhiteCard key={index}>
                 <Link to={`/video/${highlight.videos[0].id}`} state={highlight.videos} >
-                    <Image mb="3"   src={highlight.thumbnail} 
-                                    onError={(e) => {
-                                                                e.target.onerror = null;
-                                                                e.target.src = DefaultThumbnail;
-                                                                }} 
-                                    alt='Match Highlight' 
-                    />
-                    <Text fontSize="md" fontWeight="bold">⚽ { highlight.title } </Text>
-                    <p> { highlight.competition }</p>
-                    <p> { highlight.date.slice(0, 10) } </p>
+                    <Flex height="100%" flexDirection="column" justifyContent="space-between" gap="10px">
+                        <Image mb="3" borderRadius="6px"  src={highlight.thumbnail} 
+                                        onError={(e) => {
+                                                                    e.target.onerror = null;
+                                                                    e.target.src = DefaultThumbnail;
+                                                                    }} 
+                                        alt='Match Highlight' 
+                        />
+                        <Text fontSize="md" fontWeight="700">⚽ { highlight.title } </Text>
+                        <Text fontSize="15px" fontWeight="400"> { highlight.competition }</Text>
+                        <Text>📅 { highlight.date.slice(0, 10) } </Text>
+                    </Flex>
                 </Link>
                 </WhiteCard>
             })
