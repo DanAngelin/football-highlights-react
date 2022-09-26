@@ -1,7 +1,7 @@
 import { Box, Button, useMediaQuery } from '@chakra-ui/react';
 import React from 'react'
 import Logo from '../assets/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Link as HrefLink } from '@chakra-ui/react'
 import { SiGithub, SiMinutemailer, SiLinkedin } from "react-icons/si";
 import { MdOutlineContactSupport } from "react-icons/md";
@@ -47,19 +47,19 @@ function Nav() {
 
 
       <Flex>
-            <Link to="/">
+            <NavLink to="/">
               <Button colorScheme='teal' size='md' ml={{sm: "0", md: "10"}}>
                 <Icon as={AiOutlineHome} w={5} h={5} mr={2} />
                 Home
               </Button>
-            </Link>
+            </NavLink>
 
-            <Link to="/groups">
+            <NavLink to="/groups">
               <Button colorScheme='teal' size='md' ml={{sm: "0", md: "10"}}>
                 <Icon as={GiSoccerBall} w={5} h={5} mr={2} />
                 FIFA World Cup Qatar 2022
               </Button>
-            </Link>
+            </NavLink>
 
             <Box justifyContent={{sm: "center"}}>
               <Button colorScheme='teal' size='md' ml={{sm: "1", md: "10"}} onClick={() => handleModal("md")}
