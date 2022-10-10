@@ -1,4 +1,4 @@
-import { Box, Button, useMediaQuery } from '@chakra-ui/react';
+import { Box, Button } from '@chakra-ui/react';
 import React from 'react'
 import Logo from '../assets/logo.png';
 import { Link, NavLink } from 'react-router-dom';
@@ -12,6 +12,7 @@ import { Icon, Flex, Modal,useDisclosure, ModalOverlay, ModalContent, ModalFoote
 
 
 function Nav() {
+
   const spin = keyframes`
   0% { transform: translateY(0); }
   50% { transform: translateY(8px);
@@ -46,23 +47,23 @@ function Nav() {
       </Link>
 
 
-      <Flex>
+      <Flex flexDirection={{sm: "column", md: "row"}} gap={1} alignItems="center">
             <NavLink to="/">
-              <Button colorScheme='teal' size='md' ml={{sm: "0", md: "10"}}>
+              <Button colorScheme='teal' size='md'>
                 <Icon as={AiOutlineHome} w={5} h={5} mr={2} />
                 Home
               </Button>
             </NavLink>
 
             <NavLink to="/groups">
-              <Button colorScheme='teal' size='md' ml={{sm: "0", md: "10"}}>
+              <Button colorScheme='teal' size='md' >
                 <Icon as={GiSoccerBall} w={5} h={5} mr={2} />
                 FIFA World Cup Qatar 2022
               </Button>
             </NavLink>
 
             <Box justifyContent={{sm: "center"}}>
-              <Button colorScheme='teal' size='md' ml={{sm: "1", md: "10"}} onClick={() => handleModal("md")}
+              <Button colorScheme='teal' size='md' onClick={() => handleModal("md")}
                 key={"md"}>
                 <Icon as={MdOutlineContactSupport} w={5} h={5} mr={2}/>
                 Contact

@@ -20,12 +20,12 @@ const HighlightsItem = function({highlights, loading}) {
         }
     })
 
-    return <Grid templateColumns="repeat(auto-fit, minmax(15rem, 1fr))" gap="5" justifyContent="center">
+    return <Grid templateColumns="repeat(auto-fit, minmax(15rem, 1fr))" gap={2} justifyContent="center" m={1}>
         {
             highlights.map((highlight, index) => {
                 return <WhiteCard key={index}>
                 <Link to={`/video/${highlight.videos[0].id}`} state={highlight.videos} >
-                    <Flex height="100%" flexDirection="column" justifyContent="space-between" gap="10px">
+                    <Flex flexDirection="column" justifyContent="space-between" gap="10px">
                         <Image mb="3" borderRadius="6px"  src={highlight.thumbnail} 
                                         onError={(e) => {
                                                                     e.target.onerror = null;
