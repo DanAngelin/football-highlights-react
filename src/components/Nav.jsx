@@ -41,7 +41,7 @@ function Nav() {
   }
 
   return (
-    <Box m={12} display="flex" alignItems="center" justifyContent="space-between"  flexDirection={{sm: "column", md: "row"}} gap={{sm: "5"}}>
+    <Box m={12} display="flex" alignItems="center" justifyContent="space-between"  flexDirection={{base: "column", sm: "column", md: "row"}} gap={{sm: "5"}}>
       <Link to="/">
         <img src={Logo} alt="logo" />
       </Link>
@@ -49,14 +49,14 @@ function Nav() {
 
       <Flex flexDirection={{sm: "column", md: "row"}} gap={1} alignItems="center">
             <NavLink to="/">
-              <Button colorScheme='teal' size='md'>
+              <Button colorScheme='teal' size='md' fontSize={{ base: '12px', md: '15px' }}>
                 <Icon as={AiOutlineHome} w={5} h={5} mr={2} />
                 Home
               </Button>
             </NavLink>
 
             <NavLink to="/groups">
-              <Button colorScheme='teal' size='md' >
+              <Button colorScheme='teal' size='md' fontSize={{ base: '12px', md: '15px' }}>
                 <Icon as={GiSoccerBall} w={5} h={5} mr={2} />
                 FIFA World Cup Qatar 2022
               </Button>
@@ -64,7 +64,7 @@ function Nav() {
 
             <Box justifyContent={{sm: "center"}}>
               <Button colorScheme='teal' size='md' onClick={() => handleModal("md")}
-                key={"md"}>
+                key={"md"} fontSize={{ base: '12px', md: '15px' }}>
                 <Icon as={MdOutlineContactSupport} w={5} h={5} mr={2}/>
                 Contact
               </Button>

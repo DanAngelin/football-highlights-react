@@ -1,11 +1,12 @@
 
 import './App.css';
 import Home from './pages/Home';
-import * as React from 'react'
+import React, { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom';
-import Video from './components/Video';
 import { extendTheme, ChakraProvider, CSSReset } from '@chakra-ui/react'
-import PageGroups from './pages/QatarFifa/PageGroups';
+
+const Video = React.lazy(() => import('./components/Video'));
+const PageGroups = React.lazy(() => import('./pages/QatarFifa/PageGroups'));
 
 function App() {
   const customTheme = extendTheme({
@@ -54,11 +55,13 @@ function App() {
   return (
     <ChakraProvider theme={customTheme} >
       <CSSReset />
-      <Routes >
-        <Route path="/" element={<Home />} />
-        <Route path="/video/:key" element={<Video />}/>
-        <Route path="/groups" element={<PageGroups />}/>
-      </Routes>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Routes >
+          <Route path="/" element={<Home />} />
+          <Route path="/video/:key" element={<Video />}/>
+          <Route path="/groups" element={<PageGroups />}/>
+        </Routes>
+      </Suspense>
     </ChakraProvider>
   );
 }
